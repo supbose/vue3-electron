@@ -1,0 +1,81 @@
+{
+  "name": "vue3-electron-template-app",
+  "version": "1.0.0",
+  "description": "",
+  "main": "./dist/main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "./node_modules/.bin/webpack --config webpack.config.js",
+    "start": "electron .",
+    "pack": "electron-builder --dir",
+    "dist": "electron-builder"
+  },
+  "postinstall": "electron-builder install-app-deps",
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@vue/compiler-sfc": "^3.2.6",
+    "css-loader": "^6.2.0",
+    "electron": "^13.2.3",
+    "electron-builder": "^22.11.7",
+    "file-loader": "^6.2.0",
+    "glob-to-regexp": "^0.4.1",
+    "node-sass": "^6.0.1",
+    "sass-loader": "^12.1.0",
+    "style-loader": "^3.2.1",
+    "url-loader": "^4.1.1",
+    "vue": "^3.0.5",
+    "vue-loader": "^16.0.0-beta.4",
+    "webpack": "^5.51.1",
+    "webpack-cli": "^4.8.0"
+  },
+  "build": {
+    "appId": "com.zhizhuvideo.vben",
+    "copyright": "Copyright @ 2020 supbose@pm.me",
+    "productName": "项目vben测试",
+    "directories": {
+      "output": "dist_electron"
+    },
+    "publish": [
+      {
+        "provider": "github",
+        "owner": "supbose",
+        "repo": "electron-vben"
+      }
+    ],
+    "files": [
+      "!node_modules",
+      "dist/**"
+    ],
+    "asar": false,
+    "mac": {
+      "icon": "build/icons/icon.icns",
+      "category": "public.app-category.developer-tools",
+      "target": [
+        "default"
+      ],
+      "extendInfo": {
+        "LSUIElement": 1
+      }
+    },
+    "linux": {
+      "icon": "build/icons/"
+    },
+    "win": {
+      "icon": "build/icons/icon.ico",
+      "target": [
+        {
+          "target": "nsis"
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "perMachine": false,
+      "allowToChangeInstallationDirectory": true,
+      "deleteAppDataOnUninstall": false,
+      "shortcutName": "苹果资源库"
+    }
+  }
+}
