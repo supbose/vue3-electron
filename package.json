@@ -77,5 +77,8 @@
       "deleteAppDataOnUninstall": false,
       "shortcutName": "苹果资源库"
     }
+  },
+  "dependencies": {
+    "vue-cli-plugin-electron-builder": "^2.1.1"
   }
 }
